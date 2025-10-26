@@ -1,12 +1,12 @@
 /* --- Style global --- */
-body {
+#background {
   margin: 0;
   font-family: Arial, sans-serif;
   background-image: url('https://www.gamereactor.fr/media/57/zetadivisionare_3655723b.jpg');
-  background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
+  background-size: cover;
 }
 
 /* --- Barre du haut --- */
@@ -134,4 +134,35 @@ body {
     font-size: 12px;
     padding: 6px 0;
   }
+}
+
+#p{
+  display: flex;
+  justify-content: center;
+}
+
+#reseaux{
+  display: flex;
+  justify-content: space-around;
+}
+
+.discord-logo {
+  width: 34px;
+  height: 34px;
+}
+
+.X-logo{
+  width: 34px;
+  height: 34px;
+}
+
+.matcherino-web{
+  width: 54px;
+  height: 34px;
+}
+
+.matcherino-x{
+  width: 24px;
+  height: 30px;
+  background-color: black;
 }
