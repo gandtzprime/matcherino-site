@@ -234,3 +234,20 @@
   width: 150px;
   height: auto;
 }
+
+.mod{
+  width: 150px;
+  height: auto;
+}
+.moderator{
+   display: flex;
+  justify-content: flex-start;
+  text-align: left;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.texts{
+  display: flex;
+  flex-direction: column;
+}
