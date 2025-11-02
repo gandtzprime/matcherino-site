@@ -235,11 +235,6 @@
   height: auto;
 }
 
-.mod{
-  width: 150px;
-  height: auto;
-}
-
 .moderator{
    display: flex;
   justify-content: flex-start;
@@ -248,38 +243,15 @@
   padding-left: 0;
 }
 
-/* Règles principales — couvrent tous les états du lien */
-a.top-bar,
-a.top-bar:link,
-a.top-bar:visited,
-a.top-bar:hover,
-a.top-bar:active {
-  color: inherit !important;           /* même couleur que le texte parent */
-  text-decoration: none !important;   /* pas de soulignement */
-  background: none !important;
-  border: none !important;
-  box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-  outline: none !important;
-  cursor: pointer !important;
-}
-
-/* Empêche des changements de style au hover/active */
-a.no-link-style:hover,
-a.no-link-style:active {
-  color: inherit !important;
-  text-decoration: none !important;
-}
-
-/* Garde une indication visible uniquement pour les utilisateurs clavier
-   (utile pour l'accessibilité). :focus-visible est supporté par la plupart des navigateurs modernes */
-a.no-link-style:focus-visible {
-  outline: 3px dotted #ffffff;   /* ou modifier la couleur selon ton thème */
-  outline-offset: 3px;
-}
-
 .matcherino .tournoi{
   font-size: 20px;
+}
+
+pre {
+  white-space: pre-wrap;    /* garde les retours à la ligne */
+  word-wrap: break-word;    /* coupe les mots trop longs */
+  overflow-wrap: break-word; /* version moderne */
+  font-family: 'Times New Roman', Times, serif
 }
 
 .winner {
