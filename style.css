@@ -270,3 +270,6 @@ body {
   }
 }
 
+@font-face { 
+  font-family: lilita one; src: url(./lilita-one/LilitaOne-Regular.ttf) format(truetype); width: auto; height: auto; 
+}
