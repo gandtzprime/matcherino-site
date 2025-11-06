@@ -104,5 +104,3 @@ upcoming.forEach((t, index) => {
     updateCountdown();
     setInterval(updateCountdown, 60000);
 });
-
-
