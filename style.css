@@ -2,7 +2,7 @@
 #background {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-image: url('https://www.gamereactor.fr/media/57/zetadivisionare_3655723b.jpg');
+  background-image: url('./image/background hight.png');
   background-position: top;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10,14 +10,25 @@
 }
 
 /* --- Barre du haut --- */
+.top-bar a,
+.top-bar a:visited,
+.top-bar a:hover,
+.top-bar a:active,
+.top-bar a:focus {
+  color: inherit !important;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
 .top-bar {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: black;
   padding: 5px;
   border-bottom: 2px solid black;
-  background-color: yellow;
+  color: #fce303 !important;
+  font-family: 'lilita one';
 }
 
 .cell {
@@ -26,8 +37,6 @@
   border: 1px solid black;
   padding: 10px 0;
   font-weight: bold;
-  cursor: text;
-  user-select: text;
 }
 
 /* --- Carrousel --- */
@@ -53,7 +62,6 @@
   border-radius: 10px;
 }
 
-/* --- Images --- */
 .slide {
   display: none;
   width: 100%;
@@ -78,12 +86,10 @@
   padding: 10px 15px;
   border-radius: 50%;
   transition: background 0.3s, transform 0.3s;
-  z-index: 5; /* par-dessus l’image */
+  z-index: 5;
 }
-
 .prev { left: 15px; }
 .next { right: 15px; }
-
 .prev:hover, .next:hover {
   background: rgba(0,0,0,0.7);
   transform: translateY(-50%) scale(1.1);
@@ -97,84 +103,27 @@
   text-align: center;
   z-index: 6;
 }
-
 .dot {
   display: inline-block;
   width: 10px;
   height: 10px;
   margin: 0 5px;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255,255,255,0.6);
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.3s;
 }
+.dot.active { background: white; }
 
-.dot.active {
-  background: white;
-}
+/* --- Réseaux sociaux --- */
+#p { display: flex; justify-content: center; }
+#reseaux { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 15px; }
+.discord-logo, .X-logo, .matcherino-x { width: 34px; height: 34px; }
+.matcherino-web { width: 54px; height: 34px; }
 
-/* --- Responsive --- */
-@media (max-width: 480px) {
-  .carousel {
-    width: 90%;
-    height: 220px;
-  }
+/* --- Team --- */
+.who { width: 100%; margin: 0; padding: 0; }
 
-  .prev, .next {
-    font-size: 22px;
-    padding: 8px 10px;
-  }
-
-  .dot {
-    width: 8px;
-    height: 8px;
-  }
-
-  .cell {
-    font-size: 12px;
-    padding: 6px 0;
-  }
-}
-
-#p{
-  display: flex;
-  justify-content: center;
-}
-
-#reseaux{
-  display: flex;
-  justify-content: space-around;
-}
-
-.discord-logo {
-  width: 34px;
-  height: 34px;
-}
-
-.X-logo{
-  width: 34px;
-  height: 34px;
-}
-
-.matcherino-web{
-  width: 54px;
-  height: 34px;
-}
-
-.matcherino-x{
-  width: 24px;
-  height: 30px;
-  background-color: black;
-}
-
-/* Conteneur principal */
-.who {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-/* Bloc générique */
 .team-member {
   display: flex;
   align-items: flex-start;
@@ -182,152 +131,141 @@
   margin: 80px 0;
   width: 100%;
 }
+.team-member.left { justify-content: flex-start; text-align: left; }
+.team-member.right { justify-content: flex-end; text-align: right; }
+.team-member.right .text { order: -1; }
+.text { max-width: 40%; }
+.text h2 { margin: 0 0 10px 0; }
+.text p { margin: 0; line-height: 1.5; }
 
-/* Bloc gauche collé au bord gauche */
-.team-member.left {
+.pdpy, .pdpn, .pdpg, .pdpr, .pdpi, .pdpt {
+  width: 200px;
+  height: auto;
+}
+
+/* --- Modérateurs --- */
+.moderator {
+  display: flex;
   justify-content: flex-start;
   text-align: left;
-  margin-left: 0;
-  padding-left: 0;
 }
 
-/* Bloc droit collé au bord droit */
-.team-member.right {
-  justify-content: flex-end;
-  text-align: right;
-  margin-right: 0;
-  padding-right: 0;
-}
-
-/* Inversion de l’ordre pour le texte à droite */
-.team-member.right .text {
-  order: -1;
-}
-
-/* Image */
-.pdpy {
-  width: 200px;
-  height: auto;
-}
-
-/* Zone de texte */
-.text {
-  max-width: 40%;
-}
-
-/* Titres et paragraphes */
-.text h2 {
-  margin: 0 0 10px 0;
-}
-
-.text p {
-  margin: 0;
-  line-height: 1.5;
-}
-
-.pdpn{
-  width: 200px;
-  height: auto;
-}
-
-.pdpg{
-  width: 200px;
-  height: auto;
-}
-
-.moderator{
-   display: flex;
-  justify-content: flex-start;
-  text-align: left;
-  margin-left: 0;
-  padding-left: 0;
-}
-
-.matcherino .tournoi{
-  font-size: 20px;
-}
+/* --- Matcherino --- */
+.matcherino .tournoi { font-size: 20px; }
 
 pre {
-  white-space: pre-wrap;    /* garde les retours à la ligne */
-  word-wrap: break-word;    /* coupe les mots trop longs */
-  overflow-wrap: break-word; /* version moderne */
-  font-family: 'Times New Roman', Times, serif
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .winner {
   display: flex;
   flex-direction: column;
-  gap: 4px; /* espace entre les noms */
+  gap: 4px;
 }
 
-/*calendrier des tournois*/
+/* --- Calendrier --- */
 #calendar {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #010108;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #010108;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
-
-#calendar h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #fff;
-}
-
-#tournament-list {
-    list-style: none;
-    padding: 0;
-}
-
+#calendar h2 { text-align: center; margin-bottom: 20px; color: #fff; }
+#tournament-list { list-style: none; padding: 0; }
 #tournament-list li {
-    background-color: #fce303;
-    margin-bottom: 15px;
-    padding: 15px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #fce303;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-
-.tournament-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.countdown {
-    font-weight: bold;
-    color: #050401;
-    margin-top: 5px;
-}
-
+.tournament-info { display: flex; flex-direction: column; }
+.countdown { font-weight: bold; color: #050401; margin-top: 5px; }
 .btn-register {
-    background-color: #ff4500;
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
+  background-color: #ff4500;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
 }
-
-.btn-register:hover {
-    background-color: #ff6347;
-}
-
+.btn-register:hover { background-color: #ff6347; }
 .copy-btn {
-    background-color: #3b3b60;
-    color: #fff;
-    border: none;
-    padding: 5px 8px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.85em;
-    margin-left: 8px;
+  background-color: #3b3b60;
+  color: #fff;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.85em;
+  margin-left: 8px;
+}
+.copy-btn:hover { background-color: #4b4b75; }
+
+body {
+  font-family: 'lilita one';
+  background-attachment: fixed;
 }
 
-.copy-btn:hover {
-    background-color: #4b4b75;
+/* --- Responsive Tablette --- */
+@media (max-width: 1024px) {
+  .top-bar { flex-wrap: wrap; }
+  .cell { flex: 1 1 45%; font-size: 14px; padding: 8px; }
+  .carousel { width: 80%; height: 300px; }
+  .text { max-width: 60%; }
 }
 
+/* --- Responsive Mobile --- */
+@media (max-width: 600px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cell {
+    flex: 1 1 100%;
+    font-size: 12px;
+    border-bottom: 1px solid #fce303;
+  }
+  .carousel {
+    width: 95%;
+    height: 220px;
+  }
+  .team-member {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 40px 0;
+  }
+  .team-member.right .text {
+    order: 1;
+  }
+  .text {
+    max-width: 90%;
+  }
+  .pdpy, .pdpn, .pdpg, .pdpr, .pdpi, .pdpt {
+    width: 150px;
+  }
+  #reseaux {
+    flex-direction: column;
+    align-items: center;
+  }
+  #tournament-list li {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .btn-register, .copy-btn {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
